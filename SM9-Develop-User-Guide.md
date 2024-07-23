@@ -324,7 +324,7 @@ linaro用户的默认密码为linaro，root用户无密码，可以从linaro用�
 
 工具使用方法：
 
-- 使用浏览器打开<https://sophon-file.sophon.cn/sophon-prod-s3/drive/23/09/11/13/DeviceMemoryModificationKit.tgz，下载最新的远程内存修改工具，选择“qt_mem_edit_V&lt;x.y.z&gt;.”文件。其中.exe文件适用于Windows系统，> .AppImage适用于带有桌面环境的Linux系统
+- 使用浏览器打开<https://sophon-file.sophon.cn/sophon-prod-s3/drive/23/09/11/13/DeviceMemoryModificationKit.tgz>，下载最新的远程内存修改工具，选择“qt_mem_edit_V&lt;x.y.z&gt;.”文件。其中.exe文件适用于Windows系统，.AppImage适用于带有桌面环境的Linux系统
 - Windows系统双击对应的程序即可执行，LInux系统需要使用chmod +x &lt;filename&gt;命令为其添加运行权限后才可运行。该程序正常运行时如下图：
 
 ![](./pics/3.5.jpg)
