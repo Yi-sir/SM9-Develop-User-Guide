@@ -98,7 +98,7 @@
 
 ## 声明
 
-Copyright ©️2024 北京算能科技有限公司
+Copyright ©️2024 北京SXXXXX科技有限公司
 
 我们对本产品手册及其中的内容具有全部的知识产权。除非特别授权，禁止复制或向第三方分发。凡侵犯本公司版权等知识产权权益的行为，本公司保留依法追究其法律责任的权利。
 
@@ -130,9 +130,9 @@ micro USB接口串口线 \* 1
 
 | **操作系统** | Ubuntu20.04或Linux系统V4.19以上 |
 | --- | --- |
-| **处理器** | 处理器<br><br>BM1688：8核ARM A53，1.6GHz主频<br><br>CV186AH：6核ARM A53，1.6GHz主频 |
+| **处理器** | 处理器<br><br>S20：8核ARM A53，1.6GHz主频<br><br>CV186AH：6核ARM A53，1.6GHz主频 |
 | **数据处理能力** | 支持FP32/FP16/INT8，可同时进行16路高清视频解码与智能分析 |
-| **内存** | BM1688：8GB，CV186AH：4GB<br><br>LPDDR4，位宽64bits<br><br>数据速率 4266Mbps |
+| **内存** | S20：8GB，CV186AH：4GB<br><br>LPDDR4，位宽64bits<br><br>数据速率 4266Mbps |
 | **存储** | eMMC 32GB |
 | **视频解码和编码** | 解码：H.264 & H.265: 16路1080P @30fps，最大分辨率8192 \* 8192<br><br>编码：H.264 & H.265: 12路 1080P @30fps，最大分辨率8K |
 | **图片编解码** | JPEG：1080P@480fps，最大分辨率32768\*32768 |
@@ -242,7 +242,7 @@ c) sudo mkfs.vfat -F 32 /dev/sdb1 # 格式化SD卡为fat32格式
 
 B. 对于Windows系统，可以使用DiskGenius等工具格式化
 
-- 下载压缩包，找到固件升级包（例如sophon-img/sdcard.tgz）将解压后的所有文件拷贝到MicroSD卡的根目录下
+- 下载压缩包，找到固件升级包（例如SXXXXX-img/sdcard.tgz）将解压后的所有文件拷贝到MicroSD卡的根目录下
 - 设备下电，将MicroSD卡插入设备上的卡槽，设备上电
 - 等待设备升级完成，移除MicroSD卡，重启设备
 - 结束
@@ -321,7 +321,7 @@ linaro用户的默认密码为linaro，root用户无密码，可以从linaro用�
 
 工具使用方法：
 
-- 使用浏览器打开<https://sophon-file.sophon.cn/sophon-prod-s3/drive/23/09/11/13/DeviceMemoryModificationKit.tgz>，下载最新的远程内存修改工具，选择“qt_mem_edit_V&lt;x.y.z&gt;.”文件。其中.exe文件适用于Windows系统，.AppImage适用于带有桌面环境的Linux系统
+- 使用浏览器打开<https://SXXXXX-file.SXXXXX.cn/SXXXXX-prod-s3/drive/23/09/11/13/DeviceMemoryModificationKit.tgz>，下载最新的远程内存修改工具，选择“qt_mem_edit_V&lt;x.y.z&gt;.”文件。其中.exe文件适用于Windows系统，.AppImage适用于带有桌面环境的Linux系统
 - Windows系统双击对应的程序即可执行，LInux系统需要使用chmod +x &lt;filename&gt;命令为其添加运行权限后才可运行。该程序正常运行时如下图：
 
 ![](./pics/3.5.jpg)
@@ -367,47 +367,47 @@ linaro用户的默认密码为linaro，root用户无密码，可以从linaro用�
 
 ## 5.1 概述
 
-SOPHON SDK是算能科技基于自主研发的深度学习处理器定制的深度学习SDK，涵盖了神经网络推理阶段所需的模型优化、高效支持能力，为深度学习应用开发和部署提供易用、高效的全栈式解决方案。
+SXXXXX SDK是算能科技基于自主研发的深度学习处理器定制的深度学习SDK，涵盖了神经网络推理阶段所需的模型优化、高效支持能力，为深度学习应用开发和部署提供易用、高效的全栈式解决方案。
 
-SOPHON SDK包含tpu-mlir、libsophon、sophon-meida等基础工具包和sophon-demo、sophon-sail、sophon-stream等高级工具包。在SM9开发者套件中，已经预装了libsophon和sophon-media的运行环境。其中，libsophon提供了tpu驱动、bmlib（设备管理）、运行时环境（库文件、工具等）；sophon-media主要基于FFMPEG、OPENCV等开源框架，适配底层硬件进行加速。
+SXXXXX SDK包含tpu-mlir、libSXXXXX、SXXXXX-meida等基础工具包和SXXXXX-demo、SXXXXX-sail、SXXXXX-stream等高级工具包。在SM9开发者套件中，已经预装了libSXXXXX和SXXXXX-media的运行环境。其中，libSXXXXX提供了tpu驱动、bmlib（设备管理）、运行时环境（库文件、工具等）；SXXXXX-media主要基于FFMPEG、OPENCV等开源框架，适配底层硬件进行加速。
 
 表6-1 SDK目录结构
 
 | **文件夹名** | **说明** |
 | --- | --- |
-| sophon-img | SoC模式安装包等 |
-| sophon-media | 支持sophon设备硬件加速的多媒体库 |
+| SXXXXX-img | SoC模式安装包等 |
+| SXXXXX-media | 支持SXXXXX设备硬件加速的多媒体库 |
 | tpu-mlir | TPU编译器工具链 |
 | tpu-perf | 模型性能和精度验证工具包 |
-| sophon-stream | 基于pipeline的高性能推理框架 |
-| sophon-demo | 针对单模型或单场景的综合例程 |
-| sophon-sail | 对底层接口进行C++/Python API封装的接口库 |
+| SXXXXX-stream | 基于pipeline的高性能推理框架 |
+| SXXXXX-demo | 针对单模型或单场景的综合例程 |
+| SXXXXX-sail | 对底层接口进行C++/Python API封装的接口库 |
 | isp-tools | ISP各个模块的参数调节 |
 | doc | 各个模块的文档资料 |
 
 ## 5.2 C++应用
 
-基于C++开发应用时，可以参考我们的sophon-demo和sophon-stream两个仓库。除了从SDK压缩包中获取之外，这两个仓库还开源到了github上。
+基于C++开发应用时，可以参考我们的SXXXXX-demo和SXXXXX-stream两个仓库。除了从SDK压缩包中获取之外，这两个仓库还开源到了github上。
 
-sophon-demo：<https://github.com/sophgo/sophon-demo/tree/release>
+SXXXXX-demo：<https://github.com/SXXXXX/SXXXXX-demo/tree/release>
 
-sophon-stream：<https://github.com/sophgo/sophon-stream>
+SXXXXX-stream：<https://github.com/SXXXXX/SXXXXX-stream>
 
-其中，sophon-demo仓库是针对单个模型或单个场景的，从搭建环境、编译模型到获取推理结果进行全面引导的仓库。其中大部分模型都包含了基于C++和Python语言的例程。用户可以参考其中的C++代码，梳理解码、预处理、推理、后处理的流程，同时起到熟悉bmlib、bmcv接口的作用。
+其中，SXXXXX-demo仓库是针对单个模型或单个场景的，从搭建环境、编译模型到获取推理结果进行全面引导的仓库。其中大部分模型都包含了基于C++和Python语言的例程。用户可以参考其中的C++代码，梳理解码、预处理、推理、后处理的流程，同时起到熟悉bmlib、bmcv接口的作用。
 
-sophon-stream是一个基于C++开发的低代码高性能推理框架。该框架包含了编解码、http协议上报、绘图、常见的检测/分类/姿态识别/OCR模型、图像拼接、深度估计等模块，用户可以通过配置Json文件搭建起pipeline，针对图片、视频、码流、相机等输入并行地进行推理，并基于框架提供的功能实现结果上报。
+SXXXXX-stream是一个基于C++开发的低代码高性能推理框架。该框架包含了编解码、http协议上报、绘图、常见的检测/分类/姿态识别/OCR模型、图像拼接、深度估计等模块，用户可以通过配置Json文件搭建起pipeline，针对图片、视频、码流、相机等输入并行地进行推理，并基于框架提供的功能实现结果上报。
 
 ## 5.3 Python应用
 
-基于Python开发应用时，可以参考我们的sophon-demo和sophon-sail两个仓库。sophon-demo仓库如上文所述，已经开源到github。sophon-sail目前只能通过SDK压缩包获取。
+基于Python开发应用时，可以参考我们的SXXXXX-demo和SXXXXX-sail两个仓库。SXXXXX-demo仓库如上文所述，已经开源到github。SXXXXX-sail目前只能通过SDK压缩包获取。
 
-sophon-sail是基于Python开发应用的核心模块，它对bmlib、bmcv、ffmpeg等代码库进行了封装，并基于pybind对外提供Python接口。sophon-sail包含解码、常见图像处理、Tensor操作、推理等功能，可以搭建起完整的Python应用。
+SXXXXX-sail是基于Python开发应用的核心模块，它对bmlib、bmcv、ffmpeg等代码库进行了封装，并基于pybind对外提供Python接口。SXXXXX-sail包含解码、常见图像处理、Tensor操作、推理等功能，可以搭建起完整的Python应用。
 
-需要注意，SM9套件上默认没有安装sophon-sail的Python环境，需要从SDK目录下的sophon-sail/python_wheels/soc_BM1688/目录获取相应版本的Python whl，并在开发板上使用 pip3 install xxx.whl 命令安装。
+需要注意，SM9套件上默认没有安装SXXXXX-sail的Python环境，需要从SDK目录下的SXXXXX-sail/python_wheels/soc_S20/目录获取相应版本的Python whl，并在开发板上使用 pip3 install xxx.whl 命令安装。
 
-安装完成后，可以使用 import sophon.sail as sail 命令来验证是否安装成功。
+安装完成后，可以使用 import SXXXXX.sail as sail 命令来验证是否安装成功。
 
-基于Python开发应用，可以参考sophon-demo仓库中各模型目录下的python例程，也可以参考sophon-sail源码目录中的sample/python目录。此目录中提供了视频编解码、yolov5/resnet等常见模型推理的参考代码。
+基于Python开发应用，可以参考SXXXXX-demo仓库中各模型目录下的python例程，也可以参考SXXXXX-sail源码目录中的sample/python目录。此目录中提供了视频编解码、yolov5/resnet等常见模型推理的参考代码。
 
 # 性能测试
 
@@ -419,8 +419,8 @@ sophon-sail是基于Python开发应用的核心模块，它对bmlib、bmcv、ffm
 
 ```bash
 pip3 install dfss --force-reinstall
-python3 -m dfss --url=open@sophgo.com:test/video_decode_encode_test/data.tgz
-python3 -m dfss --url=open@sophgo.com:test/video_decode_encode_test/scripts.tgz
+python3 -m dfss --url=open@SXXXXX.com:test/video_decode_encode_test/data.tgz
+python3 -m dfss --url=open@SXXXXX.com:test/video_decode_encode_test/scripts.tgz
 ```
 
 下载的内容包括：
