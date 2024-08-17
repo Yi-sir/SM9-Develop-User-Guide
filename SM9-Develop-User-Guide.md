@@ -191,7 +191,7 @@ micro USB接口串口线 \* 1
 
 图2-3 So-dimm套件正面
 
-![](./pics/2.4.1.jpg)
+![](./pics/2.4.1.png)
 
 图2-4 So-dimm套件背面
 
