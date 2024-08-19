@@ -130,9 +130,9 @@ micro USB接口串口线 \* 1
 
 | **操作系统** | Ubuntu20.04或Linux系统V4.19以上 |
 | --- | --- |
-| **处理器** | 处理器<br><br>S20：8核ARM A53，1.6GHz主频<br><br>CV186AH：6核ARM A53，1.6GHz主频 |
+| **处理器** | 处理器<br><br>S20：8核ARM A53，1.6GHz主频<br><br>CXXXXXH：6核ARM A53，1.6GHz主频 |
 | **数据处理能力** | 支持FP32/FP16/INT8，可同时进行16路高清视频解码与智能分析 |
-| **内存** | S20：8GB，CV186AH：4GB<br><br>LPDDR4，位宽64bits<br><br>数据速率 4266Mbps |
+| **内存** | S20：8GB，CXXXXXH：4GB<br><br>LPDDR4，位宽64bits<br><br>数据速率 4266Mbps |
 | **存储** | eMMC 32GB |
 | **视频解码和编码** | 解码：H.264 & H.265: 16路1080P @30fps，最大分辨率8192 \* 8192<br><br>编码：H.264 & H.265: 12路 1080P @30fps，最大分辨率8K |
 | **图片编解码** | JPEG：1080P@480fps，最大分辨率32768\*32768 |
@@ -353,23 +353,23 @@ linaro用户的默认密码为linaro，root用户无密码，可以从linaro用�
 
 | **命令** | **说明** |
 | --- | --- |
-| bm_get_basic_info | 用于获取设备基本信息，包括IP地址、MAC地址、系统开机时间、板卡温度、芯片结温，NPU使用率等。 |
-| bm_version | 用于查看设备版本信息。 |
-| bm_get_temperature | 用于获取设备温度信息，包括板卡温度、芯片结温等。 |
-| bm_set_ip | 用于设置静态IP。 |
-| bm_set_ip_auto | 用于设置动态IP。 |
+| bx_get_basic_info | 用于获取设备基本信息，包括IP地址、MAC地址、系统开机时间、板卡温度、芯片结温，NPU使用率等。 |
+| bx_version | 用于查看设备版本信息。 |
+| bx_get_temperature | 用于获取设备温度信息，包括板卡温度、芯片结温等。 |
+| bx_set_ip | 用于设置静态IP。 |
+| bx_set_ip_auto | 用于设置动态IP。 |
 | cat /factory/OEMconfig.ini | 用于获取产品信息，如SN等 |
 | cat /sys/kernel/debug/ion/cvi_vpp_heap_dump/summary | 查看VPU/JPU/VPSS预留内存的情况 |
 | cat /sys/kernel/debug/ion/cvi_npu_heap_dump/summary | 查看TPU预留内存的情况 |
-| bm-smi | 查看TPU使用率 |
+| bx-smi | 查看TPU使用率 |
 
 # 应用开发
 
 ## 5.1 概述
 
-SXXXXX SDK是算能科技基于自主研发的深度学习处理器定制的深度学习SDK，涵盖了神经网络推理阶段所需的模型优化、高效支持能力，为深度学习应用开发和部署提供易用、高效的全栈式解决方案。
+SXXXXX SDK是SXXXXX基于自主研发的深度学习处理器定制的深度学习SDK，涵盖了神经网络推理阶段所需的模型优化、高效支持能力，为深度学习应用开发和部署提供易用、高效的全栈式解决方案。
 
-SXXXXX SDK包含tpu-mlir、libSXXXXX、SXXXXX-meida等基础工具包和SXXXXX-demo、SXXXXX-sail、SXXXXX-stream等高级工具包。在SM9开发者套件中，已经预装了libSXXXXX和SXXXXX-media的运行环境。其中，libSXXXXX提供了tpu驱动、bmlib（设备管理）、运行时环境（库文件、工具等）；SXXXXX-media主要基于FFMPEG、OPENCV等开源框架，适配底层硬件进行加速。
+SXXXXX SDK包含tpu-mlir、libSXXXXX、SXXXXX-meida等基础工具包和SXXXXX-demo、SXXXXX-sail、SXXXXX-stream等高级工具包。在SM9开发者套件中，已经预装了libSXXXXX和SXXXXX-media的运行环境。其中，libSXXXXX提供了tpu驱动、bxlib（设备管理）、运行时环境（库文件、工具等）；SXXXXX-media主要基于FFMPEG、OPENCV等开源框架，适配底层硬件进行加速。
 
 表6-1 SDK目录结构
 
@@ -393,7 +393,7 @@ SXXXXX-demo：<https://github.com/SXXXXX/SXXXXX-demo/tree/release>
 
 SXXXXX-stream：<https://github.com/SXXXXX/SXXXXX-stream>
 
-其中，SXXXXX-demo仓库是针对单个模型或单个场景的，从搭建环境、编译模型到获取推理结果进行全面引导的仓库。其中大部分模型都包含了基于C++和Python语言的例程。用户可以参考其中的C++代码，梳理解码、预处理、推理、后处理的流程，同时起到熟悉bmlib、bmcv接口的作用。
+其中，SXXXXX-demo仓库是针对单个模型或单个场景的，从搭建环境、编译模型到获取推理结果进行全面引导的仓库。其中大部分模型都包含了基于C++和Python语言的例程。用户可以参考其中的C++代码，梳理解码、预处理、推理、后处理的流程，同时起到熟悉bxlib、bxcv接口的作用。
 
 SXXXXX-stream是一个基于C++开发的低代码高性能推理框架。该框架包含了编解码、http协议上报、绘图、常见的检测/分类/姿态识别/OCR模型、图像拼接、深度估计等模块，用户可以通过配置Json文件搭建起pipeline，针对图片、视频、码流、相机等输入并行地进行推理，并基于框架提供的功能实现结果上报。
 
@@ -401,7 +401,7 @@ SXXXXX-stream是一个基于C++开发的低代码高性能推理框架。该框�
 
 基于Python开发应用时，可以参考我们的SXXXXX-demo和SXXXXX-sail两个仓库。SXXXXX-demo仓库如上文所述，已经开源到github。SXXXXX-sail目前只能通过SDK压缩包获取。
 
-SXXXXX-sail是基于Python开发应用的核心模块，它对bmlib、bmcv、ffmpeg等代码库进行了封装，并基于pybind对外提供Python接口。SXXXXX-sail包含解码、常见图像处理、Tensor操作、推理等功能，可以搭建起完整的Python应用。
+SXXXXX-sail是基于Python开发应用的核心模块，它对bxlib、bxcv、ffmpeg等代码库进行了封装，并基于pybind对外提供Python接口。SXXXXX-sail包含解码、常见图像处理、Tensor操作、推理等功能，可以搭建起完整的Python应用。
 
 需要注意，SM9套件上默认没有安装SXXXXX-sail的Python环境，需要从SDK目录下的SXXXXX-sail/python_wheels/soc_S20/目录获取相应版本的Python whl，并在开发板上使用 pip3 install xxx.whl 命令安装。
 
@@ -494,7 +494,7 @@ tpu_id:0
 
 thread_num:12
 
-encode_type(h264_bm / hevc_bm):h264_bm
+encode_type(h264_bx / hevc_bx):h264_bx
 
 nohup: redirecting stderr to stdout
 
