@@ -8,6 +8,7 @@
 | **1.1** | **24.06.14** | **徐逸舟** | **增加网络配置** |
 | **1.2** | **24.07.01** | **徐逸舟** | **增加多媒体能力测试** |
 | **1.3** | **24.08.06** | **崔恺聪** | **修改串口线材线序说明** |
+| **1.4** | **24.09.24** | **徐逸舟** | **增加算力测试** |
 |     |     |     |     |
 
 ## 目录
@@ -515,4 +516,52 @@ speed: 365.72
 
 ## 6.2 算力测试
 
-待补充
+# 6.2.1 数据准备
+
+执行如下命令，下载算力测试的数据集和脚本文件
+
+```bash
+python3 -m dfss --url=open@sophgo.com:test/performance_testing/SE9/SE9.zip
+```
+
+# 6.2.2 环境配置
+
+使用如下命令配置opencv-python环境
+
+```bash
+export PYTHONPATH=$PYTHONPATH:/opt/sophon/sophon-opencv-latest/opencv-python
+```
+
+使用如下指令下载测试所需依赖
+
+```bash
+sudo apt-get update
+sudo apt-get install python3-pip
+sudo apt-get install python3-tqdm
+sudo pip3 install numpy==1.17.2
+```
+
+参考文档 [SAIL编译](https://doc.sophgo.com/sdk-docs/v23.09.01-lts/docs_latest_release/docs/sophon-sail/docs/zh/html/1_build.html#python3wheel) 编译所需版本的sail whl，并将编译完成的whl拷贝至待测试设备，使用如下命令安装
+
+```bash
+pip3 install ./sophon*-.whl --force-reinstall
+```
+
+将 [数据准备](#621-数据准备) 环节下载的文件拷贝至待测试设备，使用如下命令解压并赋予脚本可执行权限
+
+```bash
+unzip SE9.zip
+sudo chmod +x auto.sh
+```
+
+# 6.2.3 执行测试
+
+执行如下命令进行测试
+
+```bash
+./auto.sh
+```
+
+需要注意，默认测试循环次数较多，会运行较长时间。如果希望降低循环次数，可以对脚本中的loops参数进行修改
+
+运行完成后，终端会打印测试结果
