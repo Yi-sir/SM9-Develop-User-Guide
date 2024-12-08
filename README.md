@@ -1,4 +1,4 @@
 # README.md
 
 
-[SM9开发者套件使用手册](./SM9-Develop-User-Guide.md)
+在线阅读: [SM9用户指导手册](https://yi-sir.github.io/SM9-Develop-User-Guide/)
