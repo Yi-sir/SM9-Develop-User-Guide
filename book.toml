@@ -5,6 +5,9 @@ multilingual = false
 src = "src"
 title = "SM9 User Guide"
 
+[params]
+image_dir = "pics"
+
 [output.html]
 mathjax-support = true
 no-section-label = true
